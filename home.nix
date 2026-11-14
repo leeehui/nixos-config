@@ -53,5 +53,8 @@ in
   home.packages = with pkgs; [
     zigPkgs.nightly
     inputs.zls.packages.${pkgs.stdenv.hostPlatform.system}.default
+    weechat
   ];
+
+  xdg.configFile."weechat/irc.conf".source = ./irc.conf;
 }

@@ -5,6 +5,14 @@ let
 in
 {
   home.stateVersion = "26.05";
+
+  imports = [
+    ./tmux.nix
+  ];
+
+  programs.lazygit.enable = true;
+  programs.fzf.enable = true;
+
   programs.helix = {
     enable = true;
     settings = {
@@ -18,6 +26,7 @@ in
       keys = {
         insert = {
           "esc" = [ "normal_mode" ":wa" ];
+          "C-[" = "normal_mode";
         };
   
         normal = {
